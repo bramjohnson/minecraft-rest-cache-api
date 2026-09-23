@@ -57,6 +57,7 @@ async fn main() {
         .with_state(shared_state);
 
     let port = std::env::var("SERVER_PORT").unwrap_or("3000".to_string());
+    println!("Listening on port {port}");
 
     let listener = tokio::net::TcpListener::bind(format!("0.0.0.0:{port}"))
         .await
